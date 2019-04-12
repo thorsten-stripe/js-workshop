@@ -12,22 +12,41 @@ require("dotenv").config();
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
-// http://expressjs.com/en/starter/static-files.html
-app.use(
-  express.static(
-    path.join(__dirname, `../frontend/${process.env.FRONTEND_MODE}`)
-  )
-);
-app.use("/images", express.static(path.join(__dirname, `../frontend/images`)));
-
-// http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function(request, response) {
-  response.sendFile(
-    path.join(__dirname, `../frontend/${process.env.FRONTEND_MODE}/index.html`)
+// This facilitates the correct frontend routing - DO NOT TOUCH
+const port = process.env.PORT;
+if (port == 3000) {
+  // http://expressjs.com/en/starter/static-files.html
+  app.use(express.static(path.join(__dirname, `../frontend/vanilla`)));
+  app.use(
+    "/images",
+    express.static(path.join(__dirname, `../frontend/reactjs/src/images`))
   );
+
+  // http://expressjs.com/en/starter/basic-routing.html
+  app.get("/", function(request, response) {
+    response.sendFile(path.join(__dirname, `../frontend/vanilla/index.html`));
+  });
+
+  serverStartLog = [
+    `🚀  Server running locally: http://localhost:3000/`,
+    `Backend API served from "backend/server.js"`,
+    `Frontend served from "frontend/vanilla"`
+  ];
+} else {
+  serverStartLog = [
+    `Backend API served from "backend/server.js"`,
+    `Frontend served from "frontend/reactjs"`
+  ];
+}
+
+// Implement your API routes here
+app.get("/config", (req, res) => {
+  res.json({
+    stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY
+  });
 });
 
 // listen for requests :)
-const server = app.listen(process.env.PORT || 8000, function() {
-  console.log(`🚀  Server listening on port ${server.address().port}`);
+const server = app.listen(port, function() {
+  console.log(...serverStartLog);
 });

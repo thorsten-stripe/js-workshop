@@ -4,10 +4,15 @@
   "description": "A simple Node.js Express server with a vinalla JS and ReactJS frontend.",
   "main": "backend/server.js",
   "scripts": {
-    "start": "export FRONTEND_MODE=vanilla && node backend/server.js",
+    "start": "npm run vanilla",
+    "vanilla": "export PORT=3000 && nodemon backend/server.js",
+    "server": "export PORT=3001 && nodemon backend/server.js",
+    "client": "cd frontend/reactjs && npm run start",
+    "react": "concurrently \"npm:server\" \"npm:client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "concurrently": "^4.1.0",
     "dotenv": "^4.0.0",
     "express": "^4.16.4"
   },
@@ -29,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/thorsten-stripe/js-workshop/issues"
   },
-  "homepage": "https://github.com/thorsten-stripe/js-workshop#readme"
+  "homepage": "https://github.com/thorsten-stripe/js-workshop#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
 }
