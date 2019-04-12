@@ -1,0 +1,199 @@
+:root {
+  --gray: #8792a2;
+  --dark-gray: #3b415e;
+
+  --green: #1ea672;
+  --dark-green: #159570;
+  --darkest-green: #025450;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-size: 17px;
+  font-family: "Camphor Pro", sans-serif;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+.logo {
+  z-index: 3;
+
+  position: fixed;
+  top: 32px;
+  left: 32px;
+
+  height: 80px;
+}
+
+.product-image {
+  z-index: 2;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+
+  background: url("images/book.jpg");
+  background-size: cover;
+  background-position: 50%;
+}
+
+main {
+  padding: 160px 32px 112px;
+}
+
+.product-image + main {
+  margin-left: 50%;
+  padding-top: 112px;
+  padding-left: 56px;
+  padding-right: 56px;
+}
+
+h1 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--dark-gray);
+}
+
+.subtitle {
+  margin: 0;
+
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--gray);
+}
+
+p {
+  max-width: 24em;
+
+  line-height: 1.5;
+  color: var(--gray);
+}
+
+.product-thumbnail {
+  display: flex;
+  align-items: center;
+
+  height: 100px;
+  max-width: 600px;
+
+  margin-top: 40px;
+
+  background-color: #f7fafc;
+}
+
+.product-thumbnail img {
+  height: 100%;
+}
+
+.product-thumbnail-info {
+  padding: 24px 20px;
+}
+
+.info-title {
+  color: var(--dark-gray);
+}
+
+.info-author {
+  color: var(--gray);
+}
+
+.summary {
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+
+  height: 88px;
+  padding: 20px 56px;
+
+  background-color: white;
+  border-top: 1px solid #e3e8ee;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--gray);
+
+  transform: translateY(2px);
+}
+
+.pre-order {
+  height: 48px;
+  width: 150px;
+
+  font-size: 20px;
+  line-height: 50px;
+  color: white;
+
+  background: var(--green);
+  border: 0;
+  outline: 0;
+  border-radius: 2px;
+
+  cursor: pointer;
+}
+
+.pre-order:hover {
+  background: var(--dark-green);
+}
+
+.pre-order:active {
+  background: var(--darkest-green);
+}
+
+.order-disclaimer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  max-width: 100%;
+
+  margin: 0;
+  padding: 32px;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    position: absolute;
+  }
+
+  .product-image {
+    position: static;
+
+    height: 320px;
+    width: 100%;
+  }
+
+  .product-image + main {
+    margin-left: 0;
+    padding: 32px 32px 112px;
+  }
+
+  .summary {
+    left: 0;
+
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}

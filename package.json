@@ -1,0 +1,33 @@
+{
+  "name": "js-workshop",
+  "version": "1.0.0",
+  "description": "A simple Node.js Express server with a vinalla JS and ReactJS frontend.",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "export FRONTEND_MODE=vanilla && node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.16.4"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/thorsten-stripe/js-workshop.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "JavaScript",
+    "React"
+  ],
+  "author": "thorwebdev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thorsten-stripe/js-workshop/issues"
+  },
+  "homepage": "https://github.com/thorsten-stripe/js-workshop#readme"
+}
