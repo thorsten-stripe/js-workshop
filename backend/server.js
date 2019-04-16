@@ -14,6 +14,7 @@ require("dotenv").config();
 
 // This facilitates the correct frontend routing - DO NOT TOUCH
 const port = parseInt(process.env.PORT, 10);
+let serverStartLog = [];
 if (port === 3000) {
   // http://expressjs.com/en/starter/static-files.html
   app.use(express.static(path.join(__dirname, `../frontend/vanilla`)));
@@ -28,14 +29,14 @@ if (port === 3000) {
   });
 
   serverStartLog = [
-    `🚀  Server running locally: http://localhost:3000/`,
-    `Backend API served from "backend/server.js"`,
-    `Frontend served from "frontend/vanilla"`
+    `🚀  Server running locally at http://localhost:${port}/.`,
+    `Backend API served from "backend/server.js".`,
+    `Frontend served from "frontend/vanilla".`
   ];
 } else {
   serverStartLog = [
-    `Backend API served from "backend/server.js"`,
-    `Frontend served from "frontend/reactjs"`
+    `Backend API served from "backend/server.js".`,
+    `Frontend served from "frontend/reactjs".`
   ];
 }
 
