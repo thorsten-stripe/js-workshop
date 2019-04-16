@@ -4,9 +4,9 @@
   "description": "A simple Node.js Express server with a vinalla JS and ReactJS frontend.",
   "main": "backend/server.js",
   "scripts": {
-    "start": "npm run vanilla",
+    "start": "node backend/server.js",
     "vanilla": "export PORT=3000 && node dev.js",
-    "server": "export PORT=3001 && nodemon backend/server.js",
+    "server": "export PORT=3001 && node dev.js",
     "client": "cd frontend/reactjs && npm run start",
     "react": "concurrently \"npm:server\" \"npm:client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
