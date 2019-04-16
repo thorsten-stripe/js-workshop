@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import logo from "./images/logo.svg";
+import React, {Component} from 'react';
+import logo from './images/logo.svg';
 
 class App extends Component {
-  // Retrieve publishable key from config endpoint.
   async componentDidMount() {
+    // Retrieve publishable key from config endpoint.
     this.config = await fetch(`/config`).then(r => r.json());
   }
 

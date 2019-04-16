@@ -1,13 +1,13 @@
-const nodemon = require("nodemon");
-const ngrok = require("ngrok");
-const opn = require("opn");
+const nodemon = require('nodemon');
+const ngrok = require('ngrok');
+const opn = require('opn');
 
-require("dotenv").config();
+require('dotenv').config();
 
 const port = process.env.PORT;
 if (
-  process.env.ENVIRONMENT === "production" ||
-  process.env.NODE_ENV === "production"
+  process.env.ENVIRONMENT === 'production' ||
+  process.env.NODE_ENV === 'production'
 ) {
   nodemon(`node ./backend/server.js`);
 } else {
@@ -25,9 +25,9 @@ if (
 }
 
 nodemon
-  .on("start", () => {
-    console.log("App has started");
+  .on('start', () => {
+    console.log('App has started');
   })
-  .on("restart", files => {
-    console.log("App restarted due to: ", files);
+  .on('restart', files => {
+    console.log('App restarted due to: ', files);
   });
