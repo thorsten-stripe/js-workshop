@@ -4,8 +4,6 @@
 // init project
 const express = require("express");
 const path = require("path");
-const ngrok = require("ngrok");
-const opn = require("opn");
 const app = express();
 
 // Load environment variables from the `.env` file.
@@ -51,15 +49,4 @@ app.get("/config", (req, res) => {
 // listen for requests :)
 const server = app.listen(port, function() {
   console.log(...serverStartLog);
-
-  if (port === 3000) {
-    ngrok.connect(port)
-    .then((url) => {
-      console.log(`Available at ${url}`);
-      opn(url);
-    })
-    .catch((err) => {
-      throw err;
-    });
-  }
 });
