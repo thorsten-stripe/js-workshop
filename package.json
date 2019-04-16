@@ -5,7 +5,7 @@
   "main": "backend/server.js",
   "scripts": {
     "start": "npm run vanilla",
-    "vanilla": "export PORT=3000 && nodemon backend/server.js",
+    "vanilla": "export PORT=3000 && node dev.js",
     "server": "export PORT=3001 && nodemon backend/server.js",
     "client": "cd frontend/reactjs && npm run start",
     "react": "concurrently \"npm:server\" \"npm:client\"",
@@ -36,6 +36,8 @@
   },
   "homepage": "https://github.com/thorsten-stripe/js-workshop#readme",
   "devDependencies": {
-    "nodemon": "^1.18.11"
+    "ngrok": "^3.1.1",
+    "nodemon": "^1.18.11",
+    "opn": "^6.0.0"
   }
 }

@@ -13,8 +13,8 @@ require("dotenv").config();
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
 // This facilitates the correct frontend routing - DO NOT TOUCH
-const port = process.env.PORT;
-if (port == 3000) {
+const port = parseInt(process.env.PORT, 10);
+if (port === 3000) {
   // http://expressjs.com/en/starter/static-files.html
   app.use(express.static(path.join(__dirname, `../frontend/vanilla`)));
   app.use(
