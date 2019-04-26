@@ -6,14 +6,18 @@ require('dotenv').config();
 
 const port = parseInt(process.env.PORT, 10);
 ngrok
-  .connect(port)
+  .connect({
+    proto: 'http',
+    addr: port,
+    host_header: `localhost:${port}`
+  })
   .then(url => {
     nodemon(`-x 'NGROK_URL=${url} PORT=${port} node' ./backend/server.js`);
     if (port === 3000) {
       opn(url);
       console.log(`🌍 Available online: ${url}`);
     }
-    console.log(`👩🏻‍💻  Webhook URL for Stripe: ${url}/webhook`);
+    console.log(`👩🏻‍💻  Webhook URL for Stripe: ${url}/webhooks`);
   })
   .catch(err => {
     throw err;
