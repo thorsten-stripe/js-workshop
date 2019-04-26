@@ -6,11 +6,7 @@ require('dotenv').config();
 
 const port = parseInt(process.env.PORT, 10);
 ngrok
-  .connect({
-    proto: 'http',
-    addr: port,
-    host_header: `localhost:${port}`
-  })
+  .connect(port)
   .then(url => {
     nodemon(`-x 'NGROK_URL=${url} PORT=${port} node' ./backend/server.js`);
     if (port === 3000) {
