@@ -11,9 +11,9 @@ ngrok
     nodemon(`-x 'NGROK_URL=${url} PORT=${port} node' ./backend/server.js`);
     if (port === 3000) {
       opn(url);
-      console.log(`🌍 Available online: ${url}`);
+      console.log(`🌍 Available online: ${url}/`);
     }
-    console.log(`👩🏻‍💻  Webhook URL for Stripe: ${url}/webhook`);
+    console.log(`👩🏻‍💻  Webhook URL for Stripe: ${url}/webhooks`);
   })
   .catch(err => {
     throw err;
