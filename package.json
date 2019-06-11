@@ -15,7 +15,6 @@
     "concurrently": "^4.1.0",
     "dotenv": "^4.0.0",
     "express": "^4.16.4",
-    "redis": "^2.8.0",
     "stripe": "^6.31.0"
   },
   "engines": {
