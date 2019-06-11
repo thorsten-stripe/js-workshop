@@ -15,4 +15,4 @@ async function getConfig() {
   return await fetch(`/config`).then(r => r.json());
 }
 
-window.onload = main();
+window.onload = main;
