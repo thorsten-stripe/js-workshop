@@ -1,27 +1,21 @@
-class StripeWorkshop {
-  constructor(config) {
-    if (typeof config === 'undefined') {
-      throw new Error('Cannot be called directly.');
-    }
+let stripe;
 
-    // Init Stripe.js
-    this.stripe = Stripe(config.stripePublishableKey);
-  }
+async function main() {
+  const config = await getConfig();
 
-  static async build() {
-    const config = await fetch(`/config`).then(r => r.json());
-    return new StripeWorkshop(config);
-  }
+  stripe = Stripe(config.stripePublishableKey);
 
-  addListeners() {
-    const preorderButton = document.querySelector('.pre-order');
-    preorderButton.addEventListener('click', e => {
-      // Implement functionality.
-      console.log('foo');
-    });
-  }
+  const preorderButton = document.querySelector('.pre-order');
+  preorderButton.addEventListener('click', e => {
+    // Implement functionality.
+    console.log('foo');
+  });
 }
 
-StripeWorkshop.build().then((stripeWorkshop) => {
-  stripeWorkshop.addListeners();
-});
+async function getConfig() {
+  const config = await fetch(`/config`).then(r => r.json());
+
+  return config;
+}
+
+main();
