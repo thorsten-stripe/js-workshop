@@ -5,37 +5,11 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const {promisify} = require('util');
-const redis = require('redis');
-
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const app = express();
 
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
-
-/**
- * We're going to use Redis as our persistent storage solution. Check the README for details on how to install and get Redis running
- *
- * All Redis calls are async, with the below we use promisify to wrap client.get so we can use promises and async/await like so:
- *
- * client.set('foo', 'bar');
- *
- * getAsync('foo').then((res) => {
- *  console.log(res); // logs 'bar'
- * });
- *
- * async function foo() {
- *  const res = await getAsync('foo');
- *  console.log(res); // logs 'bar'
- * }
- */
-const client = redis.createClient();
-const getAsync = promisify(client.get).bind(client);
-
-client.on('error', function (err) {
-  console.log(`Error ${err}`);
-});
 
 // This facilitates the correct frontend routing - DO NOT TOUCH
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
