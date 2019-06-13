@@ -40,6 +40,7 @@ This will start the loval web server and automatically open up an ngrok tunnel t
 
 - Run `cd frontend/reactjs/`
 - Run `npm install` to install the React frontend dependencies
+- Run `cd ../..` to get back to the root directory
 - Run `npm run react` from the command line
 
 This will bundle up your files and serve them over HTTPS locally. It will also automatically open up a browser pointing to your local server.
@@ -71,13 +72,15 @@ Useful links that you’ll probably need throughout this workshop:
 
 ### Testing
 
-You can copy and paste the following test cards to trigger different scenarios:
+You can copy and paste the following test card numbers to trigger different scenarios:
 
 | Test case               | card number      |
 | ----------------------- | ---------------- |
 | Default US card         | 4242424242424242 |
 | Default SG card         | 4000007020000003 |
 | 3D Secure auth required | 4000000000003063 |
+
+**Note**: With test cards you can use any date in the future and any three digit CVC.
 
 See the [docs](https://stripe.com/docs/testing#cards) for a full list of test cards. Non-card payments will redirect to test pages.
 
