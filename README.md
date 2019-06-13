@@ -55,9 +55,9 @@ This will bundle up your files and serve them over HTTPS locally. It will also a
 
 Using Stripe’s APIs and tools, we are going to implement payment processing on our test website in a couple different ways. During this workshop we’ll look at:
 
-- [ ] Stripe Checkout
-- [ ] Stripe Elements & PaymentIntents
-- [ ] Apple Pay and Google Pay with the Payment Request API
+- Stripe Checkout
+- Stripe Elements & PaymentIntents
+- Apple Pay and Google Pay with the Payment Request API
 
 ## Documentation
 
