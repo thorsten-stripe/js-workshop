@@ -85,3 +85,7 @@ You can copy and paste the following test card numbers to trigger different scen
 See the [docs](https://stripe.com/docs/testing#cards) for a full list of test cards. Non-card payments will redirect to test pages.
 
 🚀 Happy hacking 🎉
+
+# Credits
+- Code: [Thorsten Schaeff](https://twitter.com/thorwebdev), [Paul Asjes](https://twitter.com/paul_asjes), [Chris Trudeau](https://twitter.com/trudeaucj), [Daniel Miller](https://twitter.com/dalanmiller), Shengwei Wu
+- Design: [Ryo](https://twitter.com/ryolu_)
