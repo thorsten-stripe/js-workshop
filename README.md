@@ -23,11 +23,11 @@ For this workshop we’ll be using [ngrok](https://ngrok.com/) to expose your lo
 
 ### Quickstart
 
-Run `npm run vanilla` in your the command line from the project root.
+- Run `npm run vanilla` in your the command line from the project root.
 
 This will start the loval web server and automatically open up an ngrok tunnel to the localhost.
 
-**Note**: Although changes in server.js will automatically restart the server, for front end changes you’ll need to manually reload the page.
+**Note**: Although changes in `server.js` will automatically restart the server, for front end changes you’ll need to manually reload the page.
 
 ### Entrypoint
 
@@ -51,6 +51,14 @@ This will bundle up your files and serve them over HTTPS locally. It will also a
 - Frontend: [`/frontend/reactjs/src/App.js`](https://github.com/thorsten-stripe/js-workshop/blob/master/frontend/reactjs/src/App.js)
 - Server: [`/backend/server.js`](https://github.com/thorsten-stripe/js-workshop/blob/master/backend/server.js)
 
+## Objectives
+
+Using Stripe’s APIs and tools, we are going to implement payment processing on our test website in a couple different ways. During this workshop we’ll look at:
+
+- [ ] Stripe Checkout
+- [ ] Stripe Elements & PaymentIntents
+- [ ] Apple Pay and Google Pay with the Payment Request API
+
 ## Documentation
 
 Useful links that you’ll probably need throughout this workshop:
@@ -72,3 +80,5 @@ You can copy and paste the following test cards to trigger different scenarios:
 | 3D Secure auth required | 4000000000003063 |
 
 See the [docs](https://stripe.com/docs/testing#cards) for a full list of test cards. Non-card payments will redirect to test pages.
+
+🚀 Happy hacking 🎉
