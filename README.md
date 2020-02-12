@@ -17,15 +17,15 @@ All you need for this workshop is a laptop, an IDE, and an internet connection. 
 
 ## Developing with nGrok
 
-For this workshop we’ll be using [ngrok](https://ngrok.com/) to expose your local webs erver to the internet. This is especially useful when developing and testing webhooks.
+For this workshop we’ll be using [ngrok](https://ngrok.com/) to expose your local web server to the Internet. This is especially useful when developing and testing webhooks.
 
 ## Vanilla JS
 
 ### Quickstart
 
-- Run `npm run vanilla` in your the command line from the project root.
+- Run `npm run vanilla` in the command line from the project root.
 
-This will start the loval web server and automatically open up an ngrok tunnel to the localhost.
+This will start the local web server and automatically open up an ngrok tunnel to the localhost.
 
 **Note**: Although changes in `server.js` will automatically restart the server, for front end changes you’ll need to manually reload the page.
 
